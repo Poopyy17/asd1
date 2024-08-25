@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/rotary/static/css/main.b05ab1e0.css",
+    "main.js": "/rotary/static/js/main.f02da2ec.js",
+    "static/media/RCLP LPGH GG Turnover 2023_2.mp4": "/rotary/static/media/RCLP LPGH GG Turnover 2023_2.0f015f1df0254e02bef9.mp4",
+    "static/media/4.png": "/rotary/static/media/4.f59f710f99be26c6ab4b.png",
+    "static/media/1.png": "/rotary/static/media/1.bd83bdd95614758f6d5f.png",
+    "static/media/3.png": "/rotary/static/media/3.863703f10865bec16fa8.png",
+    "static/media/5.png": "/rotary/static/media/5.3033af5250046b4881e1.png",
+    "static/media/2.png": "/rotary/static/media/2.dea3f0ccfe36b15bc40f.png",
+    "static/media/rotary1.png": "/rotary/static/media/rotary1.59e3297ee94b9579dd90.png",
+    "static/media/ronald1.png": "/rotary/static/media/ronald1.7c57506efecae7d3c646.png",
+    "static/media/6.png": "/rotary/static/media/6.6623b6453e295084ab4c.png",
+    "static/media/prescy2.png": "/rotary/static/media/prescy2.7b794c03160769ea89e9.png",
+    "static/media/Rotary logo.png": "/rotary/static/media/Rotary logo.b01e5ff666d8318f36a4.png",
+    "index.html": "/rotary/index.html",
+    "main.b05ab1e0.css.map": "/rotary/static/css/main.b05ab1e0.css.map",
+    "main.f02da2ec.js.map": "/rotary/static/js/main.f02da2ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b05ab1e0.css",
+    "static/js/main.f02da2ec.js"
+  ]
+}
