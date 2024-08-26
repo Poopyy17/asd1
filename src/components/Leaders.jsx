@@ -4,13 +4,11 @@ import ronald from "../assets/ronald1.png";
 
 const Leaders = () => {
   return (
-    <div className="w-full py-16">
-      <div className="w-full text-center px-12">
-        <div className="bg-[#111727] p-4 rounded-lg inline-block w-full">
-          <h1 className="md:text-5xl sm:text-4xl text-white text-xl font-coolvetica font-bold tracking-widest leading-tight">
-            OUR LEADERS
-          </h1>
-        </div>
+    <div className="w-full mt-20">
+      <div className="w-full text-center px-5">
+        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-3xl text-black font-dinnext font-black">
+          OUR LEADERS
+        </h1>
       </div>
       <div className="max-w-[1240px] mx-auto px-4 grid md:grid-cols-2 pt-5 gap-8">
         {/* Prescy */}

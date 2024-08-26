@@ -27,7 +27,11 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between h-20 w-full mx-auto px-4 bg-white shadow-md">
       <Link to="/" className="flex items-center">
-        <img src={Logo} alt="Logo" className="h-16 w-auto" />
+        <img
+          src={Logo}
+          alt="Logo"
+          className="h-16 w-auto max-w-[250px] object-contain"
+        />
       </Link>
       {/* Desktop Menu */}
       <ul className="hidden md:flex text-gray-400">
@@ -148,7 +152,11 @@ const Navbar = () => {
           nav ? "translate-x-0" : "-translate-x-full"
         } z-50`}
       >
-        <img src={Logo} alt="Logo" className="h-14 w-auto m-2" />
+        <img
+          src={Logo}
+          alt="Logo"
+          className="h-14 w-auto max-w-[150px] object-contain m-2"
+        />
         <ul className="p-4">
           <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
             <Link to="/about">About</Link>
