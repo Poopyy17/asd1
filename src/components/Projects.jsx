@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import image1 from "../assets/Carousel/1.png";
 import image2 from "../assets/Carousel/2.png";
 import image3 from "../assets/Carousel/3.png";
@@ -7,76 +9,74 @@ import image5 from "../assets/Carousel/5.png";
 import image6 from "../assets/Carousel/6.png";
 
 const Projects = () => {
-  const images = [image1, image2, image3, image4, image5, image6];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 2 : prevIndex - 2
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex >= images.length - 2 ? 0 : prevIndex + 2
-    );
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    slidesToScroll: 2,
+    align: "center", // Centering the slides
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState([]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 3000); // Change image every 3 seconds
+    if (emblaApi) {
+      setScrollSnaps(emblaApi.scrollSnapList());
+      emblaApi.on("select", () => {
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+      });
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [currentIndex]); // Depend on currentIndex so the effect re-runs when it changes
+      const interval = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 3000); // Cycle every 3 seconds
 
-  // Calculate the number of dots needed
-  const numDots = Math.ceil(images.length / 2);
+      return () => clearInterval(interval); // Cleanup interval on component unmount
+    }
+  }, [emblaApi]);
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <div className="relative flex flex-col items-center justify-center mt-10">
-      <h1 className="text-center md:text-5xl sm:text-4xl text-black text-xl font-coolvetica font-bold tracking-widest leading-tight mb-8">
+    <div className="relative flex flex-col items-center justify-center mt-10 -mb-8">
+      <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <h1 className="text-center lg:text-7xl md:text-5xl sm:text-xl text-3xl text-black font-dinnext font-black mt-3 mb-5">
         OUR PROJECTS
       </h1>
-      <div className="relative flex px-8 items-center max-w-6xl">
-        {" "}
-        {/*  Adjust max-w for larger images */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black p-2 rounded-full z-10"
-        >
-          &#10094;
-        </button>
-        <div className="flex space-x-4 w-full">
-          <div className="relative w-full max-w-xl overflow-hidden rounded-lg shadow-lg">
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className="w-full h-90 object-cover transition-opacity duration-1000 ease-in-out" // adjust height
-            />
-          </div>
-          <div className="relative w-full max-w-xl overflow-hidden rounded-lg shadow-lg">
-            <img
-              src={images[(currentIndex + 1) % images.length]}
-              alt={`Slide ${currentIndex + 2}`}
-              className="w-full h-90 object-cover transition-opacity duration-1000 ease-in-out" // adjust height
-            />
-          </div>
+      <div className="embla w-full max-w-6xl overflow-hidden" ref={emblaRef}>
+        <div className="embla__container flex">
+          {[image1, image2, image3, image4, image5, image6].map(
+            (image, index) => (
+              <div className="embla__slide flex-shrink-0 w-1/2 p-2" key={index}>
+                <div className="relative overflow-hidden rounded-lg shadow-md">
+                  <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            )
+          )}
         </div>
-        <button
-          onClick={handleNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black p-2 rounded-full z-10"
-        >
-          &#10095;
-        </button>
       </div>
+      <button
+        onClick={scrollPrev}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black p-3 rounded-full z-10"
+      >
+        <HiChevronLeft size={24} />
+      </button>
+      <button
+        onClick={scrollNext}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black p-3 rounded-full z-10"
+      >
+        <HiChevronRight size={24} />
+      </button>
       <div className="flex mt-4 space-x-2">
-        {Array.from({ length: numDots }, (_, index) => (
+        {scrollSnaps.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index * 2)}
-            className={`w-3 h-3 rounded-full ${
-              index * 2 === currentIndex ? "bg-black" : "bg-gray-300"
+            onClick={() => emblaApi.scrollTo(index)}
+            className={`${
+              index === selectedIndex ? "bg-black" : "bg-gray-300"
             }`}
           ></button>
         ))}

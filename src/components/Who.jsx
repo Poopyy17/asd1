@@ -17,10 +17,10 @@ const Who = () => {
           alt="President"
         />
         <div className="flex flex-col justify-center text-center md:text-left">
-          <h1 className="text-white md:text-6xl sm:text-5xl text-3xl font-extrabold font-dinnext leading-tight py-2">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-dinnext leading-tight py-2">
             WHO WE ARE?
           </h1>
-          <p className="text-xl text-white font-sans mt-1">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-sans mt-2 md:mt-4">
             Like bamboo pole to which it has been consistently compared, the
             Rotary Club of Las Piñas has remained deep-rooted despite the
             passing of time and the changing of guards.

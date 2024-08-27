@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Who from "../components/Who";
 import Leaders from "../components/Leaders";
 import Projects from "../components/Projects";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
