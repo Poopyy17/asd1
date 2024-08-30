@@ -1,6 +1,7 @@
 import React from "react";
 import prescy from "../assets/prescy2.png";
 import ronald from "../assets/ronald1.png";
+import { Link } from "react-router-dom";
 
 const Leaders = () => {
   return (
@@ -10,7 +11,7 @@ const Leaders = () => {
           OUR LEADERS
         </h1>
       </div>
-      <div className="max-w-[1340px] mx-auto px-5 md:px-20 grid md:grid-cols-2 pt-5 gap-8">
+      <div className="max-w-[1340px] mx-auto px-5 md:px-20 grid md:grid-cols-2 pt-5 gap-8 ">
         {/* Prescy */}
         <div className="bg-white rounded-lg shadow-[0px_0px_4px_1px_#e2e8f0] p-4 flex flex-col items-center relative">
           <img
@@ -38,9 +39,12 @@ const Leaders = () => {
               leave a legacy of impact that transcends generations.”
               <span style={{ fontFamily: "inherit" }}></span>
             </p>
-            <button className="w-[120px] border border-gray-600 text-gray-600 bg-transparent hover:bg-gray-100 mx-auto md:mx-0 my-6 py-3 rounded-full">
+            <Link
+              to="/prescy"
+              className="w-[120px] border border-gray-600 text-gray-600 bg-transparent hover:bg-gray-100 mx-auto md:mx-0 my-6 py-3 rounded-full block text-center"
+            >
               Learn more
-            </button>
+            </Link>
           </div>
         </div>
 

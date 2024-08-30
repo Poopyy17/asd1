@@ -7,6 +7,7 @@ import image3 from "../assets/Carousel/3.png";
 import image4 from "../assets/Carousel/4.png";
 import image5 from "../assets/Carousel/5.png";
 import image6 from "../assets/Carousel/6.png";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -36,7 +37,7 @@ const Projects = () => {
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <div className="relative flex flex-col items-center justify-center mt-10 -mb-8">
+    <div className="relative flex flex-col items-center justify-center mt-10">
       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <h1 className="text-center lg:text-7xl md:text-5xl sm:text-xl text-3xl text-black font-dinnext font-black mt-3 mb-5">
         OUR PROJECTS
@@ -70,7 +71,7 @@ const Projects = () => {
       >
         <HiChevronRight size={24} />
       </button>
-      <div className="flex mt-4 space-x-2">
+      <div className="flex mt-2 space-x-2">
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
@@ -81,6 +82,12 @@ const Projects = () => {
           ></button>
         ))}
       </div>
+      <Link
+        to="/signature-projects"
+        className="block w-[150px] bg-blue-600 hover:bg-blue-700 text-white mx-auto md:mx-0 my-6 py-2 rounded-md text-center"
+      >
+        View more
+      </Link>
     </div>
   );
 };

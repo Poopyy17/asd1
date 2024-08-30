@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import Roster from "./pages/Roster";
 
 function App() {
   return (
@@ -12,10 +13,10 @@ function App() {
         <Navbar />
 
         <main className="flex-grow">
-          {/* Routes */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/roster-of-members" element={<Roster />} />
           </Routes>
         </main>
 

@@ -56,3 +56,11 @@
 .animate-ease-in {
     animation: easeIn 1s ease-in-out;
 }
+
+.line-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0 1rem;
+    /* Adjust padding as needed */
+}

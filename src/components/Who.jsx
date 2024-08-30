@@ -1,9 +1,10 @@
 import React from "react";
 import rotary from "../assets/rotary1.png";
+import { Link } from "react-router-dom";
 
 const Who = () => {
   return (
-    <div className="relative w-full bg-slate-950 py-16 px-4 md:-mt-[80px] -mt-[100px] overflow-hidden -z-10">
+    <div className="relative w-full bg-slate-950 py-16 px-4 md:-mt-[80px] -mt-[100px] overflow-hidden">
       {/* Background Circles */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
@@ -25,9 +26,12 @@ const Who = () => {
             Rotary Club of Las Piñas has remained deep-rooted despite the
             passing of time and the changing of guards.
           </p>
-          <button className="w-[150px] bg-blue-600 hover:bg-blue-700 text-white mx-auto md:mx-0 my-6 py-3 rounded-md">
+          <Link
+            to="/about"
+            className="block w-[150px] bg-blue-600 hover:bg-blue-700 text-white mx-auto md:mx-0 my-6 py-3 rounded-md text-center"
+          >
             About us
-          </button>
+          </Link>
         </div>
       </div>
     </div>
