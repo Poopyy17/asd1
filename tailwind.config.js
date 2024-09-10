@@ -3,23 +3,27 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      gap: {
+        0.5: "0.125rem", // Smallest custom gap
+        0.1: "0.025rem", // Even smaller gap if needed
+      },
       keyframes: {
-        slideUp: {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
+        gradientFlow: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
+        },
+        shineEffect: {
+          "0%": { backgroundPosition: "-100% 0" },
+          "100%": { backgroundPosition: "100% 0" },
         },
       },
       animation: {
-        "slide-up": "slideUp 1s ease-out forwards",
-      },
-      letterSpacing: {
-        wide: "0.3rem",
-        wider: "0.5rem",
+        "gradient-flow": "gradientFlow 5s linear infinite",
+        "shine-effect": "shineEffect 2s infinite",
       },
       colors: {
         gold: "#FFD700", // Define your gold color
       },
-
       fontFamily: {
         sans: ["Roboto", "Helvetica", "Arial", "sans-serif"],
         coolvetica: ["Coolvetica", "sans-serif"],

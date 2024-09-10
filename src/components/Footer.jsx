@@ -25,9 +25,7 @@ const Footer = () => {
             <FaYoutube size={24} />
           </Link>
           <Link
-            to="https://www.example.com/your-video-link"
-            target="_blank"
-            rel="noopener noreferrer"
+            to="/screen"
             className="bg-[#2d2958] text-white p-2 rounded-xl hover:bg-gray-700"
           >
             <FaVideo size={24} />

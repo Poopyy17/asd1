@@ -1,5 +1,5 @@
 import React from "react";
-import rotary from "../assets/rotary1.png";
+import rotary from "../assets/logo png 2.png";
 import { Link } from "react-router-dom";
 
 const Who = () => {

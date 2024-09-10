@@ -1,7 +1,7 @@
 import React from "react";
 import prescy from "../assets/prescy2.png";
 import ronald from "../assets/ronald1.png";
-import { Link } from "react-router-dom";
+import prescyPDF from "../assets/Gov_Prescy.pdf";
 
 const Leaders = () => {
   return (
@@ -39,12 +39,14 @@ const Leaders = () => {
               leave a legacy of impact that transcends generations.”
               <span style={{ fontFamily: "inherit" }}></span>
             </p>
-            <Link
-              to="/prescy"
+            <a
+              href={prescyPDF}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-[120px] border border-gray-600 text-gray-600 bg-transparent hover:bg-gray-100 mx-auto md:mx-0 my-6 py-3 rounded-full block text-center"
             >
               Learn more
-            </Link>
+            </a>
           </div>
         </div>
 

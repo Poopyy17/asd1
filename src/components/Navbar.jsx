@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Logo from "../assets/Rotary logo.png";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [nav, setNav] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null); // Track active dropdown
   const [hideTimeout, setHideTimeout] = useState(null);
+  const mobileMenuRef = useRef(null); // Create ref for the mobile menu
 
   const handleNav = () => {
     setNav(!nav);
@@ -23,6 +25,28 @@ const Navbar = () => {
     }, 50); // Timer delay
     setHideTimeout(timeout);
   };
+
+  const handleScrollToPaulHarris = () => {
+    navigate("/major-donors", { state: { scrollTo: "paul-harris-fellows" } });
+  };
+
+  // Function to close the mobile menu if clicked outside
+  const handleClickOutside = (event) => {
+    if (
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(event.target)
+    ) {
+      setNav(false);
+    }
+  };
+
+  // Set up and clean up event listener
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="flex items-center justify-between h-20 w-full mx-auto px-4 bg-white shadow-md">
@@ -91,7 +115,9 @@ const Navbar = () => {
               <Link to="/major-donors">Major Donors</Link>
             </li>
             <li className="px-4 py-2 hover:bg-gray-100 hover:text-gray-800 rounded-lg transition-all duration-300">
-              <Link to="/paul-harris-fellows">Paul Harris Fellows</Link>
+              <button onClick={handleScrollToPaulHarris}>
+                Paul Harris Fellows
+              </button>
             </li>
           </ul>
         </li>
@@ -139,6 +165,15 @@ const Navbar = () => {
             Sponsors
           </Link>
         </li>
+
+        <li className="relative mx-4">
+          <Link
+            to="/contact-us"
+            className="block w-[110px] bg-blue-600 hover:bg-blue-700 text-white my-2 py-2 rounded-md text-center"
+          >
+            Contact Us
+          </Link>
+        </li>
       </ul>
 
       {/* Mobile Menu Toggle */}
@@ -148,6 +183,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
+        ref={mobileMenuRef} // Attach ref to the mobile menu
         className={`fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-100 bg-white ease-in-out duration-500 ${
           nav ? "translate-x-0" : "-translate-x-full"
         } z-50`}
@@ -171,19 +207,24 @@ const Navbar = () => {
             <Link to="/major-donors">Major Donors</Link>
           </li>
           <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
-            <Link to="/paul-harris-fellows">Paul Harris Fellows</Link>
+            <button onClick={handleScrollToPaulHarris}>
+              Paul Harris Fellows
+            </button>
           </li>
           <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
-            <a href="/signature-projects">Signature Projects</a>
+            <Link to="/signature-projects">Signature Projects</Link>
           </li>
           <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
-            <a href="/global-grant-projects">Global Grant Projects</a>
+            <Link to="/global-grant-projects">Global Grant Projects</Link>
           </li>
           <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
             <Link to="/events">Events</Link>
           </li>
-          <li className="py-4 hover:text-blue-500 rounded-lg transition-all duration-300">
+          <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
             <Link to="/sponsors">Sponsors</Link>
+          </li>
+          <li className="py-4 border-b border-gray-200 hover:text-blue-500 rounded-lg transition-all duration-300">
+            <Link to="/contact-us">Contact Us</Link>
           </li>
         </ul>
         <div className="text-gray-600 py-4 m-2">
