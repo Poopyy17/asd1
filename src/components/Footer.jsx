@@ -1,7 +1,7 @@
-import React from "react";
-import { FaFacebookF, FaYoutube, FaVideo } from "react-icons/fa";
-import rotary from "../assets/Rotary logo.png";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { FaFacebookF, FaYoutube, FaVideo } from 'react-icons/fa';
+import rotary from '../assets/Rotary logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         <div className="flex space-x-4 mb-2 mt-2">
           <Link
-            to="https://www.facebook.com/RCLPC3830"
+            to="https://www.facebook.com/rotarycluboflaspinas"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#2d2958] text-white p-2 rounded-xl hover:bg-blue-700"
