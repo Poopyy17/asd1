@@ -77,6 +77,8 @@ import manapsal1 from "../assets/Rotary Members/Manapsal (1).png";
 import manapsal2 from "../assets/Past Presidents Logos/manapsal.png";
 import hernandez1 from "../assets/Rotary Members/Hernandez (1).png";
 import hernandez2 from "../assets/Past Presidents Logos/hernandez.png";
+import vilchez1 from "../assets/ronald1.png";
+import vilchez2 from "../assets/Past Presidents Logos/vilchez.jpeg";
 
 const PastPresidents = () => {
   const ocampo = [{ src: ocampo1 }, { src: ocampo2 }];
@@ -123,6 +125,7 @@ const PastPresidents = () => {
   const catud = [{ src: catud1 }, { src: catud2 }];
   const manapsal = [{ src: manapsal1 }, { src: manapsal2 }];
   const hernandez = [{ src: hernandez1 }, { src: hernandez2 }];
+  const vilchez = [{ src: vilchez1 }, { src: vilchez2 }];
 
   return (
     <>
@@ -442,7 +445,7 @@ const PastPresidents = () => {
               images={licarte}
               name="Enrico V. Licarte"
               tagLine="The Future of Rotatry Is In Your Hands"
-              ry="1981-1982"
+              ry="2009-2010"
             />
           </div>
 
@@ -583,6 +586,16 @@ const PastPresidents = () => {
               name="Rafael Hernandez"
               tagLine="Create Hope in the World"
               ry="2023-2024"
+            />
+          </div>
+
+          {/* Vilchez Images */}
+          <div className="flex justify-center">
+            <PastPresidentImage
+              images={vilchez}
+              name="Ronald V. Vilchez"
+              tagLine="The Magic of Rotary"
+              ry="2024-2025"
             />
           </div>
 

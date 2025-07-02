@@ -8,12 +8,10 @@ import PaulHarris from "../components/PaulHarris";
 import badr from "../assets/Rotary Members/Badr (1).png";
 import miriam from "../assets/Rotary Members/Badr (2).png";
 import buenconsejo from "../assets/Rotary Members/Buenconsejo (1).png";
-import besitan from "../assets/Rotary Members/Besitan.png";
 import catud from "../assets/Rotary Members/Catud (1).png";
 import cornista from "../assets/Rotary Members/Cornista (1).png";
 import deVera from "../assets/Rotary Members/De Vera (1).png";
 import becca from "../assets/Rotary Members/De Vera (2).png";
-import esquillo from "../assets/Rotary Members/Esquillo.png";
 import lisa from "../assets/Rotary Members/Flor (2).png";
 import hernandez from "../assets/Rotary Members/Hernandez (1).png";
 import licarte from "../assets/Rotary Members/Licarte (1).png";
@@ -28,13 +26,10 @@ import ocampo from "../assets/Rotary Members/Ocampo (1).png";
 import olive from "../assets/Rotary Members/Ocampo (2).png";
 import parilla from "../assets/Rotary Members/Parilla (1).png";
 import annie1 from "../assets/Rotary Members/Parilla (2).png";
-import penson from "../assets/Rotary Members/Penson (1).png";
 import pua from "../assets/Rotary Members/Pua.png";
 import ramirez from "../assets/Rotary Members/Ramirez (1).png";
-import staAna from "../assets/Rotary Members/Sta. Ana.png";
 import tah from "../assets/Rotary Members/Tah (1).png";
 import vilchez from "../assets/Rotary Members/Vilchez (1).png";
-import zhou from "../assets/Rotary Members/Zhou (1).png";
 import { useLocation } from "react-router-dom";
 
 const MajorDonors = () => {
@@ -136,11 +131,6 @@ const MajorDonors = () => {
               <PaulHarris imageSrc={buenconsejo} name="RITCHE D. BUENCONSEJO" />
             </div>
 
-            {/* BESITAN Image */}
-            <div className="flex justify-center">
-              <PaulHarris imageSrc={besitan} name="MANUEL P. BESITAN" />
-            </div>
-
             {/* CATUD Image */}
             <div className="flex justify-center">
               <PaulHarris imageSrc={catud} name="SOCRATES P. CATUD" />
@@ -159,11 +149,6 @@ const MajorDonors = () => {
             {/* BECCA Image */}
             <div className="flex justify-center">
               <PaulHarris imageSrc={becca} name="BECCA DE VERA" />
-            </div>
-
-            {/* ESQUILLO Image */}
-            <div className="flex justify-center">
-              <PaulHarris imageSrc={esquillo} name="FREDERICK D. ESQUILLO" />
             </div>
 
             {/* FLOR Image */}
@@ -246,11 +231,6 @@ const MajorDonors = () => {
               <PaulHarris imageSrc={annie1} name="ANNIE PARILLA" />
             </div>
 
-            {/* PENSON Image */}
-            <div className="flex justify-center">
-              <PaulHarris imageSrc={penson} name="ANGELO DWIGHT L. PENSON" />
-            </div>
-
             {/* PUA Image */}
             <div className="flex justify-center">
               <PaulHarris imageSrc={pua} name="JAIME M. PUA" />
@@ -259,11 +239,6 @@ const MajorDonors = () => {
             {/* RAMIREZ Image */}
             <div className="flex justify-center">
               <PaulHarris imageSrc={ramirez} name="CHRISTOPHER F. RAMIREZ" />
-            </div>
-
-            {/* STA. ANA Image */}
-            <div className="flex justify-center">
-              <PaulHarris imageSrc={staAna} name="JOSEPH PATRICK R. STA. ANA" />
             </div>
 
             {/* TAH Image */}
@@ -276,10 +251,6 @@ const MajorDonors = () => {
               <PaulHarris imageSrc={vilchez} name="RONALD V. VILCHEZ" />
             </div>
 
-            {/* ZHOU Image */}
-            <div className="flex justify-center">
-              <PaulHarris imageSrc={zhou} name="JUN MIN ZHOU" />
-            </div>
             {/* Add more image component here */}
           </div>
         </div>

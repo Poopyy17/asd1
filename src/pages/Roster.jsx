@@ -13,8 +13,6 @@ import deVera from "../assets/Rotary Members/De Vera (1).png";
 import becca from "../assets/Rotary Members/De Vera (2).png";
 import flor from "../assets/Rotary Members/Flor (1).png";
 import lisa from "../assets/Rotary Members/Flor (2).png";
-import gomez from "../assets/Rotary Members/Gomez (1).png";
-import mitch from "../assets/Rotary Members/Gomez (2).png";
 import hernandez from "../assets/Rotary Members/Hernandez (1).png";
 import eloisa from "../assets/Rotary Members/Hernandez (2).png";
 import hernandez1 from "../assets/Rotary Members/Hernandez1 (1).png";
@@ -38,19 +36,14 @@ import olive from "../assets/Rotary Members/Ocampo (2).png";
 import palmes from "../assets/Rotary Members/Palmes.png";
 import parilla from "../assets/Rotary Members/Parilla (1).png";
 import annie1 from "../assets/Rotary Members/Parilla (2).png";
-import penson from "../assets/Rotary Members/Penson (1).png";
-import cristina from "../assets/Rotary Members/Penson (2).png";
 import pua from "../assets/Rotary Members/Pua.png";
 import ramirez from "../assets/Rotary Members/Ramirez (1).png";
 import analyn from "../assets/Rotary Members/Ramirez (2).png";
-import reyes from "../assets/Rotary Members/Reyes.png";
 import staAna from "../assets/Rotary Members/Sta. Ana.png";
 import tah from "../assets/Rotary Members/Tah (1).png";
 import almayda from "../assets/Rotary Members/Tah (2).png";
 import vilchez from "../assets/Rotary Members/Vilchez (1).png";
 import angelica from "../assets/Rotary Members/Vilchez (2).png";
-import zhou from "../assets/Rotary Members/Zhou (1).png";
-import jackie from "../assets/Rotary Members/Zhou (2).png";
 import afzelius from "../assets/Rotary Members/Honorary Afzelius.png";
 import cornista1 from "../assets/Rotary Members/Honorary Cornista.png";
 import encarnacion from "../assets/Rotary Members/Honorary Encarnacion.png";
@@ -259,14 +252,6 @@ const Roster = () => {
             <RosterImage imageSrc={lisa} name="Lisa" isSpouse={true} />
           </div>
 
-          {/* Gomez Image */}
-          <div className="flex justify-center items-center">
-            <RosterImage imageSrc={gomez} name="Rodel G. Gomez" />
-          </div>
-          <div className="flex justify-center items-center">
-            <RosterImage imageSrc={mitch} name="Mitch" isSpouse={true} />
-          </div>
-
           {/* Hernandez Image */}
           <div className="flex justify-center items-center">
             <RosterImage
@@ -387,13 +372,13 @@ const Roster = () => {
             <RosterImage imageSrc={olive} name="Olive" isSpouse={true} />
           </div>
 
-          {/* Empty Div */}
-          <div className="hidden md:block"></div>
-
           {/* Palmes Image */}
           <div className="flex justify-center items-center">
             <RosterImage imageSrc={palmes} name="Arnel M. Palmes" />
           </div>
+
+          {/* Empty Div */}
+          <div className="hidden md:block"></div>
 
           {/* Parilla Image */}
           <div className="flex justify-center items-center">
@@ -405,18 +390,6 @@ const Roster = () => {
           </div>
           <div className="flex justify-center items-center">
             <RosterImage imageSrc={annie1} name="Annie" isSpouse={true} />
-          </div>
-
-          {/* Penson Image */}
-          <div className="flex justify-center items-center">
-            <RosterImage
-              imageSrc={penson}
-              name="Angelo Dwight L. Penson"
-              profession="Traffic/Transport Engineering"
-            />
-          </div>
-          <div className="flex justify-center items-center">
-            <RosterImage imageSrc={cristina} name="Cristina" isSpouse={true} />
           </div>
 
           {/* Pua Image */}
@@ -443,15 +416,6 @@ const Roster = () => {
             <RosterImage imageSrc={analyn} name="Analyn" isSpouse={true} />
           </div>
 
-          {/* Reyes Image */}
-          <div className="flex justify-center items-center">
-            <RosterImage
-              imageSrc={reyes}
-              name="Rey Angelo D. Reyes"
-              profession="Public Services - Youth Sector"
-            />
-          </div>
-
           {/* Sta Ana Image */}
           <div className="flex justify-center items-center">
             <RosterImage
@@ -460,6 +424,9 @@ const Roster = () => {
               profession="Medicine"
             />
           </div>
+
+          {/* Empty Div */}
+          <div className="hidden md:block"></div>
 
           {/* Tah Image */}
           <div className="flex justify-center items-center">
@@ -479,18 +446,6 @@ const Roster = () => {
           </div>
           <div className="flex justify-center items-center">
             <RosterImage imageSrc={angelica} name="Angelica" isSpouse={true} />
-          </div>
-
-          {/* Zhou Image */}
-          <div className="flex justify-center items-center">
-            <RosterImage
-              imageSrc={zhou}
-              name="Jun Min Zhou"
-              profession="Home Furnishing Specialist"
-            />
-          </div>
-          <div className="flex justify-center items-center">
-            <RosterImage imageSrc={jackie} name="Jackie" isSpouse={true} />
           </div>
         </div>
       </div>
